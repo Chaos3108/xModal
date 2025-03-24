@@ -22,7 +22,9 @@ function App() {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
   };
-
+  const handleOutsideClick = (e) => {
+    setIsClicked(false); // Closes the modal
+  };  
   const validatePhoneNumber = (phone) => {
     const regex = /^[0-9]{10}$/; // Ensures exactly 10 digits
     return regex.test(phone);
@@ -70,8 +72,8 @@ function App() {
       </button>
 
       {isClicked && (
-        <div className="modal">
-          <div className="modal-content">
+        <div className="modal" onClick={handleOutsideClick}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <form className="form" onSubmit={handleSubmit}>
               <label className="label-text">Fill Details</label>
               <label className="label-text">UserName</label>
