@@ -37,12 +37,11 @@ function App() {
     // Ensure birthdate is not in the future
     if (selectedDate > today) {
       return false;
-    }else{
-      return true
+    } else {
+      return true;
     }
 
-    console.log(selectedDate,today , selectedDate > today);
-   
+    console.log(selectedDate, today, selectedDate > today);
 
     // return age;
   };
@@ -81,6 +80,7 @@ function App() {
                 onChange={(e) => setUsername(e.target.value)}
                 required
                 type="text"
+                id="username"
               />
 
               <label className="label-text">Email</label>
@@ -89,6 +89,7 @@ function App() {
                 onChange={(e) => setEmail(e.target.value)}
                 required
                 type="email"
+                id="email"
               />
               {/* {errors.email && <p className="error">{errors.email}</p>} */}
 
@@ -99,6 +100,7 @@ function App() {
                 required
                 type="text"
                 maxLength="10"
+                id="phone"
               />
               {/* {errors.phonenumber && <p className="error">{errors.phonenumber}</p>} */}
 
@@ -108,6 +110,7 @@ function App() {
                 onChange={(e) => setDob(e.target.value)}
                 required
                 type="date"
+                id="dob"
                 // max={new Date().toISOString().split("T")[0]} // Prevents future dates
               />
 
